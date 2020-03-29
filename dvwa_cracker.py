@@ -18,8 +18,29 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+BANNER= """
+       ______ _   _  _    _  ___              
+       |  _  \ | | || |  | |/ _ \             
+       | | | | | | || |  | / /_\ \            
+       | | | | | | || |/\| |  _  |            
+       | |/ /\ \_/ /\  /\  / | | |            
+       |___/  \___/  \/  \/\_| |_/            
+                                              
+                                              
+ _____ ______  ___  _____  _   __ ___________ 
+/  __ \| ___ \/ _ \/  __ \| | / /|  ___| ___ |
+| /  \/| |_/ / /_\ \ /  \/| |/ / | |__ | |_/ /
+| |    |    /|  _  | |    |    \ |  __||    / 
+| \__/\| |\ \| | | | \__/\| |\  \| |___| |\ \ 
+ \____/\_| \_\_| |_/\____/\_| \_/\____/\_| \_|
+                                              
+                                              
+"""
+
 try:
     system('clear')
+
+    print(bcolors.BOLD+bcolors.OKBLUE+BANNER+bcolors.ENDC)
 
     target = input(bcolors.BOLD+bcolors.OKBLUE+'[?]TARGET: '+bcolors.ENDC)
     usr_file = input(bcolors.BOLD+bcolors.OKBLUE+'[?]USER_FILE: '+bcolors.ENDC)
@@ -84,7 +105,7 @@ def brute_force(info,usr_file,passwd_file):
                 cred = True
 
     if cred == False:
-        print(bcolors.BOLD+bcolors.FAIL+'[!]NO CREDENTIALS!'+bcolors.ENDC)
+        print(bcolors.BOLD+bcolors.FAIL+'[!]NO CREDENTIALS'+bcolors.ENDC)
 
     user.close()
     password.close()
